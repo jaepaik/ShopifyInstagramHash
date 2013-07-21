@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="/assets/stylesheetinstagram.css">
+<script type="text/javascript" src="/assets/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="/assets/jquery.instagram.js"></script>
+<script type="text/javascript" src="/assets/jquery.slimbox2.js"></script>
+
+<script type="text/javascript">
+// Instagram Extension 
+
+$(document).ready(function() {
+	$(".instagram").instagram({
+      hash: 'lb{{ product.title | truncatewords: 1,'' | downcase }}',
+	  show: '5',
+    clientId: 'NUMERIC CLIENTID'
+    });
+   
+	});
+	
+	$(window).load(function () {
+ 	$('div.instagram-placeholder').each( function(i) {
+  	if( i % 4 != 3 )
+    return
+ 	$(this).addClass('last')
+	})
+});
+</script>
+<P><div class="hashtag">Tag your photos on Instagram using <em><strong>#lb{{ product.title | truncatewords: 1,'' | downcase }}</strong></em> to see your photos here.</div>
+
+<div class="instagram"></div>
